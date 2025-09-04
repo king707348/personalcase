@@ -1,0 +1,24 @@
+# Nuxt / Node 專案通用 gitignore
+node_modules/
+.nuxt/
+.output/
+dist/
+build/
+
+.env
+.env.*
+
+.DS_Store
+.vscode/
+.idea/
+
+# log files
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# test reports
+coverage/
+playwright-report/
+cypress/screenshots/
+cypress/videos/
