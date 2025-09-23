@@ -1,5 +1,19 @@
 {
     "name": "Evan Hsu",
     "eng_name": "Evan Hsu",
-    "about_me": "this is content"
+    "position": "前端工程師",
+    "subtitle": "Front-End Engineer | 3+ Years of Experience",
+    "about_me": [
+        "A developer with a solid foundation in native JavaScript, now passionately focused on building modern web experiences with Vue and Nuxt. I thrive on solving complex problems and turning ambitious ideas into reality. My experience in maintaining large-scale applications has given me a keen eye for robust and scalable architecture."
+    ],
+    "interests": {
+        "title": "Interests",
+        "content": "Hiking, running, travel planning, and a good game of chess."
+    },
+    "ideal": "Open to new adventures—in technology and across the globe.",
+    "skills": {
+        "main": ["JavaScript", "Vue", "Nuxt", "HTML", "Tailwind CSS", "Git", "GitHub Actions"],
+        "secondary": ["React", "Next.js", "Node.js", "Express", "MongoDB"],
+        "legacy": ["jQuery", "Bootstrap"]
+    }
 }

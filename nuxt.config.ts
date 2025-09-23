@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  devServer: {
+    port: 8080
+  },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
@@ -10,18 +14,27 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxtjs/i18n',
+    '@nuxtjs/sitemap',
     '@vueuse/nuxt',
   ],
   i18n: {
     defaultLocale: 'zh',
-    baseUrl: "http://localhost:3000/",
-    langDir: 'locales/',
+    strategy: 'prefix',
     locales: [
-      { code: "zh", file: "zh.json" },
-      { code: "en", file: "en.json" }
+      { code: "zh", iso: "zh-TW", file: "zh.json" },
+      { code: "en", iso: "en-US", file: "en.json" }
     ],
-    lazy: true
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    },
+    lazy: true,
   },
-  css: ['~/assets/css/main.css'],
+  sitemap: {
+    i18n: true,
+    trailingSlash: true,
+    exclude: [] // 排除頁面
+  }
 
 })

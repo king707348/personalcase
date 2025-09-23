@@ -1,5 +1,6 @@
 # Nuxt / Node 專案通用 gitignore
 node_modules/
+.data/
 .nuxt/
 .output/
 dist/
