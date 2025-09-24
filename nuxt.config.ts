@@ -21,8 +21,8 @@ export default defineNuxtConfig({
     defaultLocale: 'zh',
     strategy: 'prefix',
     locales: [
-      { code: "zh", iso: "zh-TW", file: "zh.json" },
-      { code: "en", iso: "en-US", file: "en.json" }
+      { code: "zh", name: "ZH", iso: "zh-TW", file: "zh.json" },
+      { code: "en", name: "EN", iso: "en-US", file: "en.json" }
     ],
     detectBrowserLanguage: {
       useCookie: true,
@@ -30,6 +30,12 @@ export default defineNuxtConfig({
       redirectOn: 'root'
     },
     lazy: true,
+  },
+  ui: {
+    icons: {
+      light: 'i-ph-sun',
+      dark: 'i-ph-moon'
+    }
   },
   sitemap: {
     i18n: true,
