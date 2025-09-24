@@ -2,12 +2,10 @@
   <UCarousel
     v-slot="{ item }"
     fade
-    arrows
-    dots
     :items="items"
-    class="w-full mx-auto"
+    class="carousel w-full min-h-[75vh] mx-auto"
   >
-    <img :src="item.src" :alt="item.alt" width="640" class="rounded-lg w-full h-full object-cover" />
+    <img :src="item.src" :alt="item.alt" class="w-full h-full object-cover" />
   </UCarousel>
 </template>
 
@@ -19,6 +17,17 @@
 
 </script>
 
-<style>
-
+<style >
+  .carousel{
+    .overflow-hidden{
+      display: flex;
+      width: 75%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      margin: auto;
+      .items-start{
+        /* height: 100vh; */
+      }
+    }
+  }
 </style>
