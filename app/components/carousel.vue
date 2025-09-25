@@ -1,12 +1,19 @@
 <template>
-  <UCarousel
-    v-slot="{ item }"
-    fade
-    :items="items"
-    class="carousel w-full min-h-[75vh] mx-auto"
-  >
-    <img :src="item.src" :alt="item.alt" class="w-full h-full object-cover" />
-  </UCarousel>
+    <div>
+        <UCarousel
+            v-slot="{ item }"
+            fade
+            :items="items"
+            class="carousel w-full min-h-[75vh] mx-auto"
+        >
+            <NuxtImg 
+                :src="item.src" 
+                :alt="item.alt" 
+                class="w-full h-[100%] object-cover object-[10%_40%]" 
+                format="webp" 
+                quality="80" />
+        </UCarousel>
+    </div>
 </template>
 
 <script setup>
@@ -15,9 +22,10 @@
         { src: '/images/climb.jpg', alt:"climb" },
     ]
 
+
 </script>
 
-<style >
+<style style="scss">
   .carousel{
     .overflow-hidden{
       display: flex;
@@ -27,6 +35,9 @@
       margin: auto;
       .items-start{
         /* height: 100vh; */
+        .basis-full{
+            height: 100%;
+        }
       }
     }
   }

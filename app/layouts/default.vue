@@ -1,8 +1,11 @@
 <template>
-    <main class="flex bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen">
+    <main class="flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen">
         <div class="flex flex-col md:flex-row w-full h-[100vh]">
             <section class="flex-1">
                 <ClientOnly class="h-full flex items-center">
+                    <template #fallback>
+                        <div class="flex items-center justify-center h-full">Loading...</div>
+                    </template>
                     <Carousel />
                 </ClientOnly>
             </section>
@@ -34,8 +37,10 @@
                 </div>
             </section>
         </div>
+        <div>
+            <ExpTimeLine />
+        </div>
         
-
         <nav class="absolute top-0 right-0 flex p-2 gap-2">
             <NuxtLink v-for="locale in availableLocales" 
                 :key="locale.code" 
@@ -71,4 +76,5 @@
 </script>
 
 <style scoped>
+
 </style>

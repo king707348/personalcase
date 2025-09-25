@@ -30,6 +30,5 @@
 <style type="scss" scoped>
     input{
         border: 1px solid gray;
-
     }
 </style>

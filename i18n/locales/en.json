@@ -12,7 +12,7 @@
     },
     "ideal": "Open to new adventures—in technology and across the globe.",
     "skills": {
-        "main": ["JavaScript", "Vue", "Nuxt", "HTML", "Tailwind CSS", "Git", "GitHub Actions"],
+        "main": ["JavaScript", "Vue", "Nuxt", "HTML", "Tailwind CSS", "Git"],
         "secondary": ["React", "Next.js", "Node.js", "Express", "MongoDB"],
         "legacy": ["jQuery", "Bootstrap"]
     }

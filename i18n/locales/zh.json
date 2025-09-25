@@ -10,7 +10,7 @@
         "歡迎隨時找我聊聊技術、分享你的私房登山路線，或來一場燒腦的棋局！"
     ],
     "skills": {
-        "main": ["JavaScript", "Vue", "Nuxt", "HTML", "Tailwind CSS", "Git", "GitHub Actions"],
+        "main": ["JavaScript", "Vue", "Nuxt", "Tailwind CSS", "Git"],
         "secondary": ["React", "Next.js", "Node.js", "Express", "MongoDB"],
         "legacy": ["jQuery", "Bootstrap"]
     },

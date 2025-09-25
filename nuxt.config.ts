@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
     '@vueuse/nuxt',
+    'v-gsap-nuxt'
   ],
   i18n: {
     defaultLocale: 'zh',
@@ -29,7 +30,7 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
     },
-    lazy: true,
+    lazy: true
   },
   ui: {
     icons: {
