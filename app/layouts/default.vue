@@ -2,12 +2,7 @@
     <main class="flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 min-h-screen">
         <div class="flex flex-col md:flex-row w-full h-[100vh]">
             <section class="flex-1">
-                <ClientOnly class="h-full flex items-center">
-                    <template #fallback>
-                        <div class="flex items-center justify-center h-full">Loading...</div>
-                    </template>
-                    <Carousel />
-                </ClientOnly>
+                <Carousel />
             </section>
             <section class="relative flex flex-1 align-center justify-center hero">
                 <div class="w-[80%] h-[80vh] m-auto px-4">
