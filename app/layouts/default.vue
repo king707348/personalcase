@@ -32,19 +32,12 @@
                 </div>
             </section>
         </div>
-        <div>
-            <ExpTimeLine />
+        <div class="exp-timeline mb-4">
+            <ExpTimeLine class="w-[80%] m-auto" />
         </div>
         
-        <nav class="absolute top-0 right-0 flex p-2 gap-2">
-            <NuxtLink v-for="locale in availableLocales" 
-                :key="locale.code" 
-                :to="switchLocalePath(locale.code)"
-                class="px-2 py-1 m-auto rounded-md hover:bg-elevated active:bg-elevated focus:outline-none focus-visible:bg-elevated hover:disabled:bg-transparent dark:hover:disabled:bg-transparent hover:aria-disabled:bg-transparent dark:hover:aria-disabled:bg-transparent p-1.5"
-            >
-                {{ locale.name }}
-            </NuxtLink>
-            <ColorModeButton />
+        <nav class="absolute top-0 right-0 ">
+            <SwitchMode class="flex p-2 gap-2" />
         </nav>
 
         <slot />
@@ -52,12 +45,7 @@
 </template>
 
 <script setup>
-  const { locale, locales, tm, t , rt } = useI18n()
-  const switchLocalePath = useSwitchLocalePath()
-
-  const availableLocales = computed(() => {
-    return locales.value.filter(i => i.code !== locale.value)
-  })
+  const { locale, tm, t , rt } = useI18n()
 
   const mailSkills = tm('skills.main')
   const secondarySkills = tm("skills.secondary")

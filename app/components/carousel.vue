@@ -15,6 +15,7 @@
         class="w-full h-[100%] object-cover object-[10%_40%]"
         format="webp"
         quality="80"
+        preload
         placeholder
       />
     </UCarousel>

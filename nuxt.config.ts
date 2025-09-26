@@ -36,7 +36,7 @@ export default defineNuxtConfig({
     icons: {
       light: 'i-ph-sun',
       dark: 'i-ph-moon'
-    }
+    },
   },
   sitemap: {
     i18n: true,
