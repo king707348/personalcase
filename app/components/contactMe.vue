@@ -29,11 +29,8 @@
 </template>
 
 <script setup>
- import { useReCaptcha } from "recaptcha-v3"
 import * as z from 'zod'
 
-const { executeRecaptcha, recaptchaLoaded } = useReCaptcha()
-const config = useRuntimeConfig()
 const toast = useToast()
 const state = reactive({
   name: "",
@@ -44,8 +41,8 @@ const state = reactive({
 const schema = z.object({
   email: z.string().email('Invalid email')
 })
-const recaptchaToken = ref(null)
-const errorMessage = ref(null)
+
+const { verify } = useRecaptcha()
 
 
 const validate = () => {
@@ -59,42 +56,18 @@ const validate = () => {
 }
 
 async function onSubmit(event) {
-  // const token = await executeRecaptcha('action')
+  const token = await verify('submit')
+  if (!token) return alert('驗證失敗')
 
-  // errorMessage.value = null
-  // recaptchaToken.value = null
+  await $fetch('/api/action', {
+    method: 'POST',
+    body: {
+      email: state.email,
+      message: state.message,
+      recaptchaToken: token
+    }
+  })
 
-  // // 等待 reCAPTCHA 腳本載入完成
-  // await recaptchaLoaded()
-
-  // if (!token) {
-  //   errorMessage.value = '無法取得 reCAPTCHA Token，請稍後再試。'
-  //   return
-  // }
-
-  // recaptchaToken.value = token
-  // console.log(token)
-  // try{
-  //   const response = await fetch("/api/action", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ 
-  //         ...state,
-  //         recaptcha_token: token 
-  //       })
-  //   })
-
-  //   if (response.ok) {
-  //     console.log("response is ok");
-  //   }
-  //   const result = await response.json()
-  //   console.log('後端回應:', result)
-  // }catch (error) {
-  //   console.error(error)
-  //   errorMessage.value = '表單提交失敗，請稍後再試。'
-  // }
 
   toast.add({
     title: "Success",
@@ -103,6 +76,9 @@ async function onSubmit(event) {
   });
   console.log(event.data);
 }
+
+const res = await $fetch('/api/test')
+console.log(res)
 
 async function onError(event) {
   if (event?.errors?.[0]?.id) {

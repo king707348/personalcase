@@ -18,9 +18,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'v-gsap-nuxt'
   ],
-  plugins:[
-    { src: '~/plugins/recaptcha-v3.js', mode: 'client' },
-  ],
   i18n: {
     defaultLocale: 'zh',
     strategy: 'prefix',
