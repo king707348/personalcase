@@ -35,6 +35,10 @@
         <div class="exp-timeline mb-4">
             <ExpTimeLine class="w-[80%] m-auto" />
         </div>
+        <UDivider /> 
+        <div class="contact-me w-[80%] m-auto mb-4">
+            <ContactMe class="w-[80%] mx-auto my-4" />
+        </div>
         
         <nav class="absolute top-0 right-0 ">
             <SwitchMode class="flex p-2 gap-2" />
