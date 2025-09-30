@@ -18,6 +18,9 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'v-gsap-nuxt'
   ],
+  plugins:[
+    { src: '~/plugins/recaptcha-v3.js', mode: 'client' },
+  ],
   i18n: {
     defaultLocale: 'zh',
     strategy: 'prefix',
@@ -42,6 +45,12 @@ export default defineNuxtConfig({
     i18n: true,
     trailingSlash: true,
     exclude: [] // 排除頁面
+  },
+  runtimeConfig: {
+    apiSecret: process.env.RECAPTCHA_SECRET_KEY,
+    public: {
+      NUXT_PUBLIC_RECAPTCHA_SITE_KEY: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY
+    }
   }
 
 })
