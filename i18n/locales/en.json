@@ -74,5 +74,14 @@
             "location": "",
             "description": []
         }
-    ]
+    ],
+    "contact": {
+        "title": "Contact Me",
+        "description": "",
+        "form_name": "Name",
+        "form_unit": "Unit",
+        "form_email": "E-mail",
+        "form_message": "Message",
+        "submit": "Submit"
+    }
 }

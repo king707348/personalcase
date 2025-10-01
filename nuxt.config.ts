@@ -44,7 +44,7 @@ export default defineNuxtConfig({
     exclude: [] // 排除頁面
   },
   runtimeConfig: {
-    apiSecret: process.env.RECAPTCHA_SECRET_KEY,
+    apiSecret: process.env.NUXT_RECAPTCHA_SECRET_KEY,
     public: {
       NUXT_PUBLIC_RECAPTCHA_SITE_KEY: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY
     }

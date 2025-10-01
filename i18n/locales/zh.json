@@ -73,6 +73,16 @@
             "location": "",
             "description": []
         }
-    ]
+    ],
+    "contact": {
+        "title": "聯繫我",
+        "description": "",
+        "form_name": "姓名",
+        "form_unit": "單位",
+        "form_email": "E-mail",
+        "form_message": "你要說啥",
+        "submit": "送出"
+        
+    }
 }
 
