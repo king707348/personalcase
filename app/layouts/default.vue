@@ -32,11 +32,11 @@
                 </div>
             </section>
         </div>
-        <div class="exp-timeline mb-4">
-            <ExpTimeLine class="w-[80%] m-auto" />
+        <div class="exp-timeline relative mb-4">
+            <ExpTimeLine />
         </div>
         <div class="contact-me w-[80%] m-auto mb-4">
-            <ContactMe class="w-[80%] mx-auto my-4" />
+            <ContactMe />
         </div>
         
         <nav class="absolute top-0 right-0 ">
@@ -64,6 +64,5 @@
   ]
 </script>
 
-<style scoped>
-
+<style >
 </style>

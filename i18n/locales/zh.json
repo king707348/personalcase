@@ -76,7 +76,7 @@
     ],
     "contact": {
         "title": "聯繫我",
-        "description": "",
+        "description": "如果你對我的經歷或技能有興趣，非常歡迎與我聯繫，一起討論合作的可能！",
         "form_name": "姓名",
         "form_unit": "單位",
         "form_email": "E-mail",

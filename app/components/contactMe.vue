@@ -1,32 +1,34 @@
 <template>
-  <h3 class="mb-4 text-[2rem]">{{ $t("contact.title") }}</h3>
-  <p class="description">{{ $t("contact.description") }}</p>
-  <UForm
-    :schema="schema"
-    :validate="validate"
-    :state="state"
-    class="grid grid-cols-1 md:grid-cols-2 space-y-4 gap-x-2"
-    @submit="onSubmit"
-    @error="onError"
-  >
-    <UFormField :label="$t('contact.form_name')" name="name" required >
-      <UInput v-model="state.name" type="text" class="w-full" />
-    </UFormField>
+  <div class="max-w-[600px] w-[80%] mx-auto my-4">
+    <h3 class="text-[2rem]">{{ $t("contact.title") }}</h3>
+    <p class="description mb-4">{{ $t("contact.description") }}</p>
+    <UForm
+      :schema="schema"
+      :validate="validate"
+      :state="state"
+      class="grid grid-cols-1 md:grid-cols-2 space-y-4 gap-x-2"
+      @submit="onSubmit"
+      @error="onError"
+    >
+      <UFormField :label="$t('contact.form_name')" name="name" required >
+        <UInput v-model="state.name" type="text" class="w-full" />
+      </UFormField>
 
-    <UFormField :label="$t('contact.form_unit')" name="unit" >
-      <UInput v-model="state.unit" type="text" class="w-full" />
-    </UFormField>
+      <UFormField :label="$t('contact.form_unit')" name="unit" >
+        <UInput v-model="state.unit" type="text" class="w-full" />
+      </UFormField>
 
-    <UFormField :label="$t('contact.form_email')" name="email" class="md:col-span-2" required >
-      <UInput v-model="state.email" type="email" class="w-full" />
-    </UFormField>
+      <UFormField :label="$t('contact.form_email')" name="email" class="md:col-span-2" required >
+        <UInput v-model="state.email" type="email" class="w-full" />
+      </UFormField>
 
-    <UFormField :label="$t('contact.form_message')" name="message" class="md:col-span-2" required >
-      <UTextarea v-model="state.message" label="Message" class="w-full" />
-    </UFormField>
+      <UFormField :label="$t('contact.form_message')" name="message" class="md:col-span-2" required >
+        <UTextarea v-model="state.message" label="Message" class="w-full" />
+      </UFormField>
 
-    <UButton type="submit" class="w-fit"> {{ $t('contact.submit') }} </UButton>
-  </UForm>
+      <UButton type="submit" class="w-fit"> {{ $t('contact.submit') }} </UButton>
+    </UForm>
+  </div>
 </template>
 
 <script setup>

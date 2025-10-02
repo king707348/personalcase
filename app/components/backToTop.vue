@@ -18,7 +18,7 @@ import { useScroll } from '@vueuse/core';
 
 const { y } = useScroll(window, { behavior: 'smooth' })
 
-const showButton = computed(() => y.value > 300);
+const showButton = computed(() => y.value > 300)
 
 const scrollToTop = () => y.value = 0
 </script>
