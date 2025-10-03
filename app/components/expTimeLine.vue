@@ -1,46 +1,37 @@
 <template>
   <ClientOnly>
-    <UTimeline 
-        :items="timelineItems" 
-        :default-value="timelineItems.length" 
-        :color="color"
-        ref="target"
-        class="relative w-[80%] m-auto z-[5]"
-    >
-        <template #title="{ item }">
-            <h3 v-if="item.title">{{ item.company }} - {{ item.title }}</h3>
-            <small>{{ item.location }}</small>
-        </template>
-        <template #description="{ item }">
-            <ul class="mt-2 ml-4">
-                <li v-for="(desc, idx) in item.description" :key="idx" 
-                v-if="onIntersectionObserver"
-                class="text-black dark:text-slate-300">{{ desc }}
-                </li>
-            </ul>
-        </template>
-    </UTimeline>
-    <div class="absolute top-[50%] right-0 translate-y-[-50%] w-[60%] brightness-[.5] dark:brightness-[.25] z-[1]">
-      <NuxtImg src="/images/aus-bne.jpg" class="w-full aspect-[16/9]" />
+    <div class="relative flex my-5">
+      <UTimeline 
+          :items="timelineItems" 
+          :default-value="timelineItems.length" 
+          :color="color"
+          class="up-to relative w-[80%] m-auto z-[5] "
+      >
+          <template #title="{ item }">
+            <AnimatedElement>
+              <div class="exp">
+                <h3 v-if="item.title">{{ item.company }} - {{ item.title }}</h3>
+                <small>{{ item.location }}</small>
+              </div>
+            </AnimatedElement>
+          </template>
+          <template #description="{ item }">
+              <ul class="mt-2 ml-4">
+                  <li v-for="(desc, idx) in item.description" :key="idx" 
+                    class="text-black dark:text-slate-200">{{ desc }}
+                  </li>
+              </ul>
+          </template>
+      </UTimeline>
+      
+      <div class="absolute top-0 right-0 h-full w-[60%] opacity-50 dark:opacity-100 dark:brightness-[.7] z-[1]">
+        <NuxtImg src="/images/aus-bne.jpg" class="w-full sticky top-0 aspect-[16/9]" />
+      </div>
     </div>
   </ClientOnly>
 </template>
 
 <script setup>
-import { useIntersectionObserver } from '@vueuse/core'
-import { shallowRef, useTemplateRef } from 'vue'
-
-const target = useTemplateRef('target')
-const targetIsVisible = shallowRef(false)
-
-const root = useTemplateRef('root')
-
-const isVisible = shallowRef(false)
-
-function onIntersectionObserver([entry]) {
-  isVisible.value = entry?.isIntersecting || false
-}
-
 const { tm , rt } = useI18n()
 const colorMode = useColorMode()
 
@@ -58,7 +49,6 @@ const timelineItems = computed(() => {
     description: item.description.map(desc => rt(desc))
   }))
 })
-
 </script>
 
 <style scoped>

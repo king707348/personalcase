@@ -32,7 +32,7 @@
                 </div>
             </section>
         </div>
-        <div class="exp-timeline relative mb-4">
+        <div class="exp-timeline mb-4">
             <ExpTimeLine />
         </div>
         <div class="contact-me w-[80%] m-auto mb-4">

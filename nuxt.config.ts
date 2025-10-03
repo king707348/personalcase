@@ -43,6 +43,11 @@ export default defineNuxtConfig({
     trailingSlash: true,
     exclude: [] // 排除頁面
   },
+  gsap: {
+    extraPlugins: {
+      scrollTrigger: true,
+    },
+  },
   runtimeConfig: {
     apiSecret: process.env.NUXT_RECAPTCHA_SECRET_KEY,
     public: {
