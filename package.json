@@ -33,6 +33,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@nuxt/icon": "^2.0.0",
     "sass": "^1.92.0"
   }
 }

@@ -6,12 +6,15 @@
     <UCarousel
       v-slot="{ item }"
       fade
+      loop
       :items="items"
+      :autoplay="{ delay: 4000 }"
       class="carousel w-full min-h-[100%] mx-auto"
     >
       <NuxtImg
         :src="item.src"
         :alt="item.alt"
+        :title="item.alt"
         class="w-full h-[100%] object-cover object-[10%_40%]"
         format="webp"
         quality="80"
@@ -24,8 +27,9 @@
 
 <script setup>
   const items = [
-    { src: "/images/brekkie.jpg", alt: "brekkie" },
-    { src: "/images/climb.jpg", alt: "climb" },
+    { src: "/images/vn_ak47.jpg", alt: "vietnam paly ak47" },
+    { src: "/images/climb.jpg", alt: "climb Huoyanshan" },
+    { src: "/images/standingbymoon.jpg", alt: "standing by the moon" },
   ];
 </script>
 

@@ -16,11 +16,13 @@
             </AnimatedElement>
           </template>
           <template #description="{ item }">
+            <AnimatedElement>
               <ul class="mt-2 ml-4">
                   <li v-for="(desc, idx) in item.description" :key="idx" 
                     class="text-black dark:text-slate-200">{{ desc }}
                   </li>
               </ul>
+              </AnimatedElement>
           </template>
       </UTimeline>
       

@@ -22,11 +22,11 @@
             "title": "前端工程師",
             "location": "新北市",
             "description": [
-                "Responsible for maintaining and developing company frontend systems, optimizing with jQuery and native JavaScript (ES6+).",
-                "Independently developed a Nuxt 3 project, implementing multi-language support, content management (text editing, image creation/deletion), and database integration, providing colleagues with practical operation tools.",
-                "Collaborated on backend dashboard development, improving user experience and interface workflows.",
-                "Proactively proposed and drove frontend technology upgrades, demonstrating initiative in system optimization and forward-looking technical thinking.", 
-                "Proficient in Vue.js; capable of maintaining existing jQuery-based projects while also applying Vue.js to new projects to enhance performance and maintainability."
+                "負責公司前端系統的維護與開發，運用 jQuery 與原生 JavaScript (ES6+) 進行功能優化。",
+                "獨立開發 Nuxt 3 專案，實作多語系支援、內容管理（含文字編輯、圖片新增與刪除）、資料庫串接，為內部同仁提供高效的操作工具。",
+                "參與後台儀表板的共同開發，優化使用者體驗與介面操作流程。",
+                "主動提出並推動前端技術升級，展現系統優化能力與前瞻性技術思維。",
+                "熟練掌握 Vue.js，除能持續維護既有 jQuery 專案外，亦具備 Vue.js / Nuxt 3 實務開發經驗，可於新專案中應用以提升系統效能與程式維護性。"
             ]
         },
         {
@@ -35,10 +35,10 @@
             "title": "前端工程師",
             "location": "台北市",
             "description": [
-                "Worked on a Vue 2 project using Element UI, responsible for maintaining existing features and developing new components based on evolving project needs.",
-                "Implemented dynamic forms, user interactions, and data rendering with attention to performance and user experience.",
-                "Collaborated closely with back-end developers to integrate APIs and ensure consistency between front-end behavior and server responses.",
-                "Took over and extended an existing codebase by reviewing previous developers’ work and communicating directly to clarify logic and architecture."
+                "參與 Vue 2 專案 開發，使用 Element UI，負責既有功能維護與依專案需求開發新元件。",
+                "開發動態表單、使用者互動與資料渲染，著重於效能優化與使用者體驗提升。",
+                "與後端工程師緊密合作，串接並測試 API，確保前後端行為與資料一致性。",
+                "接手並擴充既有程式碼庫，透過程式碼檢視與溝通釐清架構與邏輯，確保專案能順利延續與擴充。"
             ]
         },
         {
@@ -47,10 +47,10 @@
             "title": "前端工程師",
             "location": "台南市",
             "description": [
-                "Developed responsive websites using WordPress and Elementor, translating Adobe XD designs into functional front-end layouts using HTML5, CSS3, and JavaScript.",
-                "Worked alongside the project manager to clarify project requirements, discuss technical feasibility, and support communication between design and development.",
-                "Occasionally interacted directly with clients to gather feedback or clarify expectations, gaining exposure to client-facing project communication.",
-                "While back-end work was handled by senior engineers, I contributed to front-end implementation and CMS configuration across multiple WordPress-based projects."
+                "使用 WordPress 與 Elementor 開發響應式網站，將 Adobe XD 設計稿轉換為具備互動功能的前端版面，運用 HTML5、CSS3 與 JavaScript 完成實作。",
+                "與專案經理合作，釐清專案需求、討論技術可行性，並協助設計與開發團隊之間的溝通。",
+                "偶爾直接與客戶互動，蒐集回饋或釐清需求，累積客戶溝通與專案對接經驗。",
+                "雖由資深工程師負責後端開發，但參與多個基於 WordPress 的專案，負責前端實作與 CMS 設定，確保網站能順利上線與運行。"
             ]
         },
         {
@@ -59,11 +59,11 @@
             "title": "前端工程師",
             "location": "新北市",
             "description": [
-                "Translated Adobe XD design mockups into responsive web pages using jQuery and Bootstrap 4.",
-                "Communicated directly with designers via Microsoft Teams to clarify UI/UX requirements and ensure pixel-perfect implementation.",
-                "Collaborated with full-stack developers to integrate front-end pages into a basic Laravel environment.",
-                "Managed code versioning and collaborated via Git and GitHub, following structured development workflows.",
-                "Gained hands-on experience working across teams in a fast-paced, project-based environment."
+               "使用 jQuery 與 Bootstrap 4 將 Adobe XD 設計稿轉換為響應式網頁。",
+                "透過 Microsoft Teams 與設計師直接溝通，釐清 UI/UX 需求並確保像素級精準實作。",
+                "與全端工程師合作，將前端頁面整合至基礎的 Laravel 環境。",
+                "使用 Git 與 GitHub 進行版本控制與協作，遵循結構化的開發流程。",
+                "在快速節奏、專案導向的環境中累積跨團隊合作的實務經驗。"
             ]
         },
         {

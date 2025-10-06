@@ -26,7 +26,7 @@
         <UTextarea v-model="state.message" label="Message" class="w-full" />
       </UFormField>
 
-      <UButton type="submit" class="w-fit"> {{ $t('contact.submit') }} </UButton>
+      <UButton type="submit" class="w-fit cursor-pointer"> {{ $t('contact.submit') }} </UButton>
     </UForm>
   </div>
 </template>

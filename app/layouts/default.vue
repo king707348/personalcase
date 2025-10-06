@@ -29,6 +29,9 @@
                             {{ $rt(item.name) }}
                         </UKbd>
                     </span>
+                    <span>
+                        <MyLink />
+                    </span>
                 </div>
             </section>
         </div>
@@ -64,5 +67,5 @@
   ]
 </script>
 
-<style >
+<style scoped>
 </style>
