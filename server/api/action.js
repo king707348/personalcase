@@ -1,21 +1,21 @@
 export default defineEventHandler(async (event) => {
-  const body = await readBody(event);
-  const config = useRuntimeConfig(event);
+  const body = await readBody(event)
+  const config = useRuntimeConfig(event)
   const { token } = body
-  const secretKey = config.apiSecret; 
+  const secretKey = config.apiSecret;
   // 前端取token
   if (!token) {
     throw createError({
       statusCode: 400,
-      statusMessage: 'Missing reCAPTCHA token',
+      statusMessage: 'Missing reCAPTCHA token'
     });
   }
   // google給的密鑰
   if (!secretKey) {
     throw createError({
       statusCode: 500,
-      statusMessage: 'reCAPTCHA secret key is not configured',
-    });
+      statusMessage: 'reCAPTCHA secret key is not configured'
+    })
   }
 
   const verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';

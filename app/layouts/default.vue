@@ -42,13 +42,9 @@
             <ContactMe />
         </div>
         
-        <nav class="absolute top-0 right-0 ">
-            <SwitchMode class="flex p-2 gap-2" />
-        </nav>
-        <nav>
-            <BackToTop />
-        </nav>
-
+        <LoginHead />
+        <SwitchMode class="absolute top-0 right-0 flex p-2 gap-2" />
+        <BackToTop />
         <slot />
     </main>
 </template>
