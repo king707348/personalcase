@@ -1,16 +1,17 @@
 <template>
-  <div>
+  <div class="flex justify-center items-center min-h-[100vh]">
     <el-form
         ref="ruleFormRef"
-        style="max-width: 600px"
         :model="ruleForm"
-        status-icon
         :rules="rules"
+        status-icon
+        label-position="top"
         label-width="auto"
-        class=""
+        class="h-fit px-8 py-4 border-4 rounded-2xl bg-white"
+        style="max-width: 600px"
     >
         <el-form-item label="User Name" prop="username">
-            <el-input v-model="ruleForm.username" type="text" />
+            <el-input v-model="ruleForm.username" type="text"  />
         </el-form-item>
         <el-form-item label="Password" prop="pass">
             <el-input v-model="ruleForm.pass" type="password" autocomplete="off" />
@@ -26,8 +27,6 @@
 </template>
 
 <script setup>
-import { FormInstance, FormRules } from 'element-plus'
-
 useHead({
     title: "Login"
 })
@@ -35,53 +34,66 @@ definePageMeta({
     layout: "admin"
 })
 
-const config = useRuntimeConfig()
 const ruleFormRef = ref()
 const ruleForm = reactive({
-  username: '',  
-  pass: ''
+  "username": '',  
+  "pass": ''
 })
+
+const validatePass = (rule, value, callback) => {
+  if(value.length < 4){
+    callback(new Error('Password is too slow'))
+  }
+  if (value === '') {
+    callback(new Error('Password is Required'))
+  } 
+  else {
+    if (ruleForm.pass !== '') {
+      if (!ruleFormRef.value) return
+      ruleFormRef.value.validateField('pass')
+    }
+    callback()
+  }
+}
+
 const rules = reactive({
   username: [
     { 
         required: true,
-        // validator: validateUserName, 
+        message: "User Name is Required",
         trigger: 'blur' 
     }
   ],
   pass: [
     { 
         required: true,
-        // validator: validatePass, 
+        validator: validatePass,
         trigger: 'blur' 
     }
   ]
 })
 
-// const validateUserName = (rule, value, callback) => {
-//     console.log(rule, value, callback)
-// }
-
-// const validatePass = (rule, value, callback) => {
-//   if (value === '') {
-//     callback(new Error('Please input the password'))
-//   } else {
-//     if (ruleForm.pass !== '') {
-//       if (!ruleFormRef.value) return
-//       ruleFormRef.value.validateField('pass')
-//     }
-//     callback()
-//   }
-// }
-
 const submitForm = (formEl) => {
   if (!formEl) return
-  formEl.validate((valid) => {
+  formEl.validate(async (valid) => {
     if (valid) {
       console.log('submit!')
+      const res = await $fetch("/api/login", {
+        method: 'POST',
+        headers: {
+            'Content-Type': "application/json; charset=UTF-8"
+        },
+        body: ruleForm
+      })
+
+      console.log(res)
+      if(res.status == "ok"){
+        await navigateTo("/admin/settings")
+      }
     } else {
       console.log('error submit!')
     }
+    formEl.resetFields()
   })
 }
 

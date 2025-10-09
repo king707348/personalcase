@@ -2,7 +2,7 @@ export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const config = useRuntimeConfig(event)
   const { token } = body
-  const secretKey = config.apiSecret;
+  const secretKey = config.apiSecret
   // 前端取token
   if (!token) {
     throw createError({

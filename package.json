@@ -26,6 +26,7 @@
     "element-plus": "^2.11.4",
     "eslint": "^9.34.0",
     "gsap": "^3.13.0",
+    "next-auth": "~4.21.1",
     "nuxt": "^4.1.0",
     "typescript": "^5.9.2",
     "v-gsap-nuxt": "^1.4.4",
@@ -34,6 +35,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@element-plus/nuxt": "^1.1.4",
     "@nuxt/icon": "^2.0.0",
     "sass": "^1.92.0"
   }

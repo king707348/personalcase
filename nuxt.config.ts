@@ -16,7 +16,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
     '@vueuse/nuxt',
-    'v-gsap-nuxt'
+    'v-gsap-nuxt',
+    '@element-plus/nuxt'
   ],
   i18n: {
     defaultLocale: 'zh',
@@ -52,6 +53,8 @@ export default defineNuxtConfig({
     // 使用者帳密
     DEV_USERNAME: process.env.DEV_USERNAME,
     DEV_PASSWORD: process.env.DEV_PASSWORD,
+
+    authSecret: process.env.NUXT_AUTH_SECRET,
 
     // 金鑰
     apiSecret: process.env.NUXT_RECAPTCHA_SECRET_KEY,

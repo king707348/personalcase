@@ -2,13 +2,12 @@
   <div>
     <slot />
   </div>
-
 </template>
 
 <script setup>
-    useHead({
-      titleTemplate: "%s - Evan Hsu",
-    })
+useHead({
+  titleTemplate: "%s - Evan Hsu",
+})
 
 </script>
 
