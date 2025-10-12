@@ -26,27 +26,31 @@
 </template>
 
 <script setup>
-  const items = [
-    { src: "/images/vn_ak47.jpg", alt: "vietnam paly ak47" },
-    { src: "/images/climb.jpg", alt: "climb Huoyanshan" },
-    { src: "/images/standingbymoon.jpg", alt: "standing by the moon" },
-  ];
+const { tm, rt } = useI18n();
+const items = computed(() => {
+  const picItem = tm("life_picture");
+
+  return picItem.map((item) => ({
+    src: rt(item.src),
+    alt: rt(item.alt)
+  }));
+});
 </script>
 
 <style style="scss">
-  .carousel {
-    .overflow-hidden {
-      display: flex;
-      width: 75%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      margin: auto;
-      .items-start {
-        /* height: 100vh; */
-        .basis-full {
-          height: 100%;
-        }
+.carousel {
+  .overflow-hidden {
+    display: flex;
+    width: 75%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin: auto;
+    .items-start {
+      /* height: 100vh; */
+      .basis-full {
+        height: 100%;
       }
     }
   }
+}
 </style>

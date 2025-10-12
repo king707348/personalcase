@@ -88,7 +88,7 @@ const submitForm = (formEl) => {
 
       console.log(res)
       if(res.status == "ok"){
-        await navigateTo("/admin/settings")
+        await navigateTo("/admin/dashboard")
       }
     } else {
       console.log('error submit!')

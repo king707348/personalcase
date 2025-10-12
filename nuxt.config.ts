@@ -49,6 +49,14 @@ export default defineNuxtConfig({
       scrollTrigger: true,
     },
   },
+  nitro: {
+    storage: {
+      uploads: {
+        driver: 'fs',
+        base: './public/images'
+      }
+    }
+  },
   runtimeConfig: {
     // 使用者帳密
     DEV_USERNAME: process.env.DEV_USERNAME,

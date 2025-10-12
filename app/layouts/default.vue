@@ -50,7 +50,7 @@
 </template>
 
 <script setup>
-  const { locale, tm, t , rt } = useI18n()
+  const { locale, tm, rt } = useI18n()
 
   const mailSkills = tm('skills.main')
   const secondarySkills = tm("skills.secondary")
