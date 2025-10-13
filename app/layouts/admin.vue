@@ -5,6 +5,8 @@
 </template>
 
 <script setup>
+import 'element-plus/dist/index.css'
+
 useHead({
   titleTemplate: "%s - Evan Hsu",
 })

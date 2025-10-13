@@ -15,6 +15,11 @@
         "legacy": ["jQuery", "Bootstrap"]
     },
     "interests": ["閱讀", "旅行", "下棋"],
+    "life_picture": [
+        { "src": "/images/vn_ak47.jpg", "alt": "vietnam paly ak47" },
+        { "src": "/images/climb.jpg", "alt": "climb Huoyanshan" },
+        { "src": "/images/standingbymoon.jpg", "alt": "standing by the moon" }
+    ],
     "timelineItem": [
         {
             "date": "2023/03 - 至今",
