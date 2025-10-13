@@ -58,13 +58,13 @@ export default defineNuxtConfig({
     }
   },
   runtimeConfig: {
-    // 使用者帳密
+    // user username/password
     DEV_USERNAME: process.env.DEV_USERNAME,
     DEV_PASSWORD: process.env.DEV_PASSWORD,
 
     authSecret: process.env.NUXT_AUTH_SECRET,
 
-    // 金鑰
+    // key
     apiSecret: process.env.NUXT_RECAPTCHA_SECRET_KEY,
     public: {
       NUXT_PUBLIC_RECAPTCHA_SITE_KEY: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY

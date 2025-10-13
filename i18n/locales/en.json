@@ -17,9 +17,9 @@
         "legacy": ["jQuery", "Bootstrap"]
     },
     "life_picture": [
-        { "src": "/images/vn_ak47.jpg", "alt": "vietnam paly ak47" },
-        { "src": "/images/climb.jpg", "alt": "climb Huoyanshan" },
-        { "src": "/images/standingbymoon.jpg", "alt": "standing by the moon" }
+        { "src": "/images/hero/vn_ak47.jpg", "alt": "vietnam paly ak47" },
+        { "src": "/images/hero/climb.jpg", "alt": "climb Huoyanshan" },
+        { "src": "/images/hero/standingbymoon.jpg", "alt": "standing by the moon" }
     ],
     "timelineItem": [
         {
