@@ -99,8 +99,24 @@ const handleUploadRequest = async (options) => {
       method: "POST",
       body: formData,
     })
+    console.log(options)
+    const db = await $fetch("/api/translate-i18n", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8"
+      },
+      body: {
+        lang: "",
+        key: "life_picture",
+        setData: {
+          src: types,
+          alt: file.name
+        }
+      }
+    })
+    console.log(db)
     
-    console.log(res)
+    // console.log(res)
     if(res.success) {
       ElMessage.success(res.message)
     }else{
@@ -110,6 +126,8 @@ const handleUploadRequest = async (options) => {
   }catch (e) {
     console.log(e)
   }
+
+
 }
 
 </script>
