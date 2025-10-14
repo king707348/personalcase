@@ -1,6 +1,9 @@
 <template>
   <div class="p-4">
-    <h2 class="font-bold border-b-2">DASHBOARD</h2>
+    <div class="flex justify-between">
+      <h2 class="font-bold border-b-2">DASHBOARD</h2>
+      <AvailableLocales class="mx-0" />
+    </div>
     <AdminHeroCarouselsetting />
     <AdminHeroIntroduce />
 
