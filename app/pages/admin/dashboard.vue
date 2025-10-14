@@ -5,7 +5,7 @@
     <AdminHeroIntroduce />
 
 
-    <button @click="test">Upload</button>
+    <button @click="translateData">Upload</button>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ definePageMeta({
   layout: "admin"
 })
 
-const test = async () => {
+const translateData = async () => {
   const ts = await $fetch("/api/translate-i18n", {
     method: "POST",
     headers: {

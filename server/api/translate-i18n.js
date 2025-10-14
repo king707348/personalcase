@@ -3,18 +3,26 @@ import * as path from 'path'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
-  const { lang, key, value } = body
+  const { lang, key, setData } = body
 
-  const filePath = path.join(process.cwd(), `i18n/locales/${lang}.json`)
+  const filePath_zh = path.join(process.cwd(), `i18n`,`locales`,`zh.json`)
+  const filePath_en = path.join(process.cwd(), `i18n`,`locales`,`en.json`)
 
   try {
-    const res = await fs.readFile(filePath, 'utf-8')
+    const res = await fs.readFile(filePath_zh, 'utf-8')
     const db = JSON.parse(res)
-    let content = db[key]
+    const pos = db[key]
+    const newDb = {
+      src: `/images/${setData.src}/${setData.alt}`,
+      alt: setData.alt
+    }
 
-    return { content }
+    pos.unshift(newDb)
+    db[key] = pos
+    await fs.writeFile(filePath_zh, JSON.stringify(db))
+   
+    return { db }
   }catch(err){
     console.log(err)
   }
-
 })

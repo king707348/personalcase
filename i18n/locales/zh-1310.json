@@ -10,43 +10,15 @@
         "歡迎隨時找我聊聊技術、分享你的私房登山路線，或來一場燒腦的棋局！"
     ],
     "skills": {
-        "main": [
-            "JavaScript",
-            "Vue",
-            "Nuxt",
-            "Tailwind CSS",
-            "Git"
-        ],
-        "secondary": [
-            "React",
-            "Next.js",
-            "Node.js",
-            "Express",
-            "MongoDB"
-        ],
-        "legacy": [
-            "jQuery",
-            "Bootstrap"
-        ]
+        "main": ["JavaScript", "Vue", "Nuxt", "Tailwind CSS", "Git"],
+        "secondary": ["React", "Next.js", "Node.js", "Express", "MongoDB"],
+        "legacy": ["jQuery", "Bootstrap"]
     },
-    "interests": [
-        "閱讀",
-        "旅行",
-        "下棋"
-    ],
+    "interests": ["閱讀", "旅行", "下棋"],
     "life_picture": [
-        {
-            "src": "/images/hero/vn_ak47.jpg",
-            "alt": "vietnam paly ak47"
-        },
-        {
-            "src": "/images/hero/climb.jpg",
-            "alt": "climb Huoyanshan"
-        },
-        {
-            "src": "/images/hero/standingbymoon.jpg",
-            "alt": "standing by the moon"
-        }
+        { "src": "/images/hero/vn_ak47.jpg", "alt": "vietnam paly ak47" },
+        { "src": "/images/hero/climb.jpg", "alt": "climb Huoyanshan" },
+        { "src": "/images/hero/standingbymoon.jpg", "alt": "standing by the moon" }
     ],
     "timelineItem": [
         {
@@ -92,7 +64,7 @@
             "title": "前端工程師",
             "location": "新北市",
             "description": [
-                "使用 jQuery 與 Bootstrap 4 將 Adobe XD 設計稿轉換為響應式網頁。",
+               "使用 jQuery 與 Bootstrap 4 將 Adobe XD 設計稿轉換為響應式網頁。",
                 "透過 Microsoft Teams 與設計師直接溝通，釐清 UI/UX 需求並確保像素級精準實作。",
                 "與全端工程師合作，將前端頁面整合至基礎的 Laravel 環境。",
                 "使用 Git 與 GitHub 進行版本控制與協作，遵循結構化的開發流程。",
@@ -115,5 +87,7 @@
         "form_email": "E-mail",
         "form_message": "你要說啥",
         "submit": "送出"
+        
     }
 }
+
