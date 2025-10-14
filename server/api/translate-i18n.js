@@ -3,26 +3,41 @@ import * as path from 'path'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
+  const method = event.method
   const { lang, key, setData } = body
 
-  const filePath_zh = path.join(process.cwd(), `i18n`,`locales`,`zh.json`)
-  const filePath_en = path.join(process.cwd(), `i18n`,`locales`,`en.json`)
+  const langPath = async (lang) => {
+    const filePath = path.join(process.cwd(), `i18n`,`locales`,`${lang}.json`)
+    try {
+      const res = await fs.readFile(filePath, 'utf-8')
+      const db = JSON.parse(res)
 
-  try {
-    const res = await fs.readFile(filePath_zh, 'utf-8')
-    const db = JSON.parse(res)
-    const pos = db[key]
-    const newDb = {
-      src: `/images/${setData.src}/${setData.alt}`,
-      alt: setData.alt
+      if(method == "POST"){
+        const newDb = {
+          src: `/images/${setData.src}/${setData.alt}`,
+          alt: setData.alt
+        }
+
+        db[key] = [...db[key], newDb]
+        await fs.writeFile(filePath, JSON.stringify(db))
+      }
+      if(method == "DELETE"){
+        db[key] = db[key].filter(item => item.alt !== setData)
+        await fs.writeFile(filePath, JSON.stringify(db))
+      }
+      if(method !== "POST" && method !== "DELETE"){
+        return { status: 405, message: `Method ${method} Not Allowed` }
+      }
+    }catch(err){
+      console.log(err)
+      return { status: 500, message: 'Server Error', error: err.message }
     }
+  }
 
-    pos.unshift(newDb)
-    db[key] = pos
-    await fs.writeFile(filePath_zh, JSON.stringify(db))
-   
-    return { db }
-  }catch(err){
-    console.log(err)
+  if(lang == ""){
+    langPath("en")
+    langPath("zh")
+  }else{
+    langPath(lang)
   }
 })

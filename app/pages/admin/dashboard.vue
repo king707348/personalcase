@@ -4,8 +4,6 @@
     <AdminHeroCarouselsetting />
     <AdminHeroIntroduce />
 
-
-    <button @click="translateData">Upload</button>
   </div>
 </template>
 
@@ -17,20 +15,6 @@ definePageMeta({
   layout: "admin"
 })
 
-const translateData = async () => {
-  const ts = await $fetch("/api/translate-i18n", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json; charset=UTF-8"
-    },
-    body: {
-      lang: "zh",
-      key: "life_picture",
-      setData: "",
-    }
-  })
-  console.log(ts)
-}
 </script>
 <style type="scss">
 

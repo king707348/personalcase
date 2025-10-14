@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
         // 回傳成功的訊息
         return {
             status: 'ok',
-            message: 'The file has been deleted.',
+            message: 'The file has been deleted.'
         };
 
     } catch (error) {

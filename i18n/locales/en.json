@@ -1,92 +1,92 @@
 {
-    "name": "Evan Hsu",
-    "eng_name": "Evan Hsu",
-    "position": "前端工程師",
-    "subtitle": "Front-End Engineer | 3+ Years of Experience",
-    "about_me": [
-        "A developer with a solid foundation in native JavaScript, now passionately focused on building modern web experiences with Vue and Nuxt. I thrive on solving complex problems and turning ambitious ideas into reality. My experience in maintaining large-scale applications has given me a keen eye for robust and scalable architecture."
-    ],
-    "interests": {
-        "title": "Interests",
-        "content": "Hiking, running, travel planning, and a good game of chess."
+  "name": "Evan Hsu",
+  "eng_name": "Evan Hsu",
+  "position": "前端工程師",
+  "subtitle": "Front-End Engineer | 3+ Years of Experience",
+  "about_me": [
+    "A developer with a solid foundation in native JavaScript, now passionately focused on building modern web experiences with Vue and Nuxt. I thrive on solving complex problems and turning ambitious ideas into reality. My experience in maintaining large-scale applications has given me a keen eye for robust and scalable architecture."
+  ],
+  "interests": {
+    "title": "Interests",
+    "content": "Hiking, running, travel planning, and a good game of chess."
+  },
+  "ideal": "Open to new adventures—in technology and across the globe.",
+  "skills": {
+    "main": ["JavaScript", "Vue", "Nuxt", "Tailwind CSS", "Git"],
+    "secondary": ["React", "Next.js", "Node.js", "Express", "MongoDB"],
+    "legacy": ["jQuery", "Bootstrap"]
+  },
+  "life_picture": [
+    { "src": "/images/hero/vn_ak47.jpg", "alt": "Vietnam paly ak47" },
+    { "src": "/images/hero/climb.jpg", "alt": "Climb Huoyanshan" },
+    { "src": "/images/hero/standingbymoon.jpg", "alt": "Standing by the moon" }
+  ],
+  "timelineItem": [
+    {
+      "date": "2023/03 - Now",
+      "company": "圓展科技公司",
+      "title": "Frontend Developer",
+      "location": "Taiwan",
+      "description": [
+        "Responsible for maintaining and developing company frontend systems, optimizing with jQuery and native JavaScript (ES6+).",
+        "Independently developed a Nuxt 3 project, implementing multi-language support, content management (text editing, image creation/deletion), and database integration, providing colleagues with practical operation tools.",
+        "Collaborated on backend dashboard development, improving user experience and interface workflows.",
+        "Proactively proposed and drove frontend technology upgrades, demonstrating initiative in system optimization and forward-looking technical thinking.",
+        "Proficient in Vue.js; capable of maintaining existing jQuery-based projects while also applying Vue.js to new projects to enhance performance and maintainability."
+      ]
     },
-    "ideal": "Open to new adventures—in technology and across the globe.",
-    "skills": {
-        "main": ["JavaScript", "Vue", "Nuxt", "HTML", "Tailwind CSS", "Git"],
-        "secondary": ["React", "Next.js", "Node.js", "Express", "MongoDB"],
-        "legacy": ["jQuery", "Bootstrap"]
+    {
+      "date": "2022/10 - 2023/01",
+      "company": "日陞空間",
+      "title": "Frontend Developer",
+      "location": "Taiwan",
+      "description": [
+        "Worked on a Vue 2 project using Element UI, responsible for maintaining existing features and developing new components based on evolving project needs.",
+        "Implemented dynamic forms, user interactions, and data rendering with attention to performance and user experience.",
+        "Collaborated closely with back-end developers to integrate APIs and ensure consistency between front-end behavior and server responses.",
+        "Took over and extended an existing codebase by reviewing previous developers’ work and communicating directly to clarify logic and architecture."
+      ]
     },
-    "life_picture": [
-        { "src": "/images/hero/vn_ak47.jpg", "alt": "vietnam paly ak47" },
-        { "src": "/images/hero/climb.jpg", "alt": "climb Huoyanshan" },
-        { "src": "/images/hero/standingbymoon.jpg", "alt": "standing by the moon" }
-    ],
-    "timelineItem": [
-        {
-            "date": "2023/03 - Now",
-            "company": "圓展科技公司",
-            "title": "Frontend Developer",
-            "location": "Taiwan",
-            "description": [
-                "Responsible for maintaining and developing company frontend systems, optimizing with jQuery and native JavaScript (ES6+).",
-                "Independently developed a Nuxt 3 project, implementing multi-language support, content management (text editing, image creation/deletion), and database integration, providing colleagues with practical operation tools.",
-                "Collaborated on backend dashboard development, improving user experience and interface workflows.",
-                "Proactively proposed and drove frontend technology upgrades, demonstrating initiative in system optimization and forward-looking technical thinking.", 
-                "Proficient in Vue.js; capable of maintaining existing jQuery-based projects while also applying Vue.js to new projects to enhance performance and maintainability."
-            ]
-        },
-        {
-            "date": "2022/10 - 2023/01",
-            "company": "日陞空間",
-            "title": "Frontend Developer",
-            "location": "Taiwan",
-            "description": [
-                "Worked on a Vue 2 project using Element UI, responsible for maintaining existing features and developing new components based on evolving project needs.",
-                "Implemented dynamic forms, user interactions, and data rendering with attention to performance and user experience.",
-                "Collaborated closely with back-end developers to integrate APIs and ensure consistency between front-end behavior and server responses.",
-                "Took over and extended an existing codebase by reviewing previous developers’ work and communicating directly to clarify logic and architecture."
-            ]
-        },
-        {
-            "date": "2021/08 - 2022/09",
-            "company": "日日升數位設計",
-            "title": "Frontend Developer",
-            "location": "Taiwan",
-            "description": [
-                "Developed responsive websites using WordPress and Elementor, translating Adobe XD designs into functional front-end layouts using HTML5, CSS3, and JavaScript.",
-                "Worked alongside the project manager to clarify project requirements, discuss technical feasibility, and support communication between design and development.",
-                "Occasionally interacted directly with clients to gather feedback or clarify expectations, gaining exposure to client-facing project communication.",
-                "While back-end work was handled by senior engineers, I contributed to front-end implementation and CMS configuration across multiple WordPress-based projects."
-            ]
-        },
-        {
-            "date": "2020/10 - 2021/05",
-            "company": "百分比廣告有限公司",
-            "title": "Frontend Developer",
-            "location": "Taiwan",
-            "description": [
-                "Translated Adobe XD design mockups into responsive web pages using jQuery and Bootstrap 4.",
-                "Communicated directly with designers via Microsoft Teams to clarify UI/UX requirements and ensure pixel-perfect implementation.",
-                "Collaborated with full-stack developers to integrate front-end pages into a basic Laravel environment.",
-                "Managed code versioning and collaborated via Git and GitHub, following structured development workflows.",
-                "Gained hands-on experience working across teams in a fast-paced, project-based environment."
-            ]
-        },
-        {
-            "date": "",
-            "company": "",
-            "title": "",
-            "location": "",
-            "description": []
-        }
-    ],
-    "contact": {
-        "title": "Contact Me",
-        "description": "Feel free to contact me if you're interested in working together",
-        "form_name": "Name",
-        "form_unit": "Unit",
-        "form_email": "E-mail",
-        "form_message": "Message",
-        "submit": "Submit"
+    {
+      "date": "2021/08 - 2022/09",
+      "company": "日日升數位設計",
+      "title": "Frontend Developer",
+      "location": "Taiwan",
+      "description": [
+        "Developed responsive websites using WordPress and Elementor, translating Adobe XD designs into functional front-end layouts using HTML5, CSS3, and JavaScript.",
+        "Worked alongside the project manager to clarify project requirements, discuss technical feasibility, and support communication between design and development.",
+        "Occasionally interacted directly with clients to gather feedback or clarify expectations, gaining exposure to client-facing project communication.",
+        "While back-end work was handled by senior engineers, I contributed to front-end implementation and CMS configuration across multiple WordPress-based projects."
+      ]
+    },
+    {
+      "date": "2020/10 - 2021/05",
+      "company": "百分比廣告有限公司",
+      "title": "Frontend Developer",
+      "location": "Taiwan",
+      "description": [
+        "Translated Adobe XD design mockups into responsive web pages using jQuery and Bootstrap 4.",
+        "Communicated directly with designers via Microsoft Teams to clarify UI/UX requirements and ensure pixel-perfect implementation.",
+        "Collaborated with full-stack developers to integrate front-end pages into a basic Laravel environment.",
+        "Managed code versioning and collaborated via Git and GitHub, following structured development workflows.",
+        "Gained hands-on experience working across teams in a fast-paced, project-based environment."
+      ]
+    },
+    {
+      "date": "",
+      "company": "",
+      "title": "",
+      "location": "",
+      "description": []
     }
+  ],
+  "contact": {
+    "title": "Contact Me",
+    "description": "Feel free to contact me if you're interested in working together",
+    "form_name": "Name",
+    "form_unit": "Unit",
+    "form_email": "E-mail",
+    "form_message": "Message",
+    "submit": "Submit"
+  }
 }

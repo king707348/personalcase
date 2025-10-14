@@ -1,119 +1,91 @@
 {
-    "name": "許益誠",
-    "eng_name": "Evan Hsu",
-    "position": "前端工程師",
-    "about_me": [
-        "我是一名熱愛打造流暢使用者介面的前端工程師。",
-        "過去三年多的業界經驗，讓我透過維護大型專案和專注於原生 JavaScript 開發，打下了扎實的語言核心基礎。這段經歷讓我深刻體會到良好程式架構的價值，也成為我擁抱現代框架的穩固基石。",
-        "然而，真正點燃我熱情的，是在工作之餘，一頭栽進現代前端框架的世界。我特別享受用 Vue 和 Nuxt 來打造專案，從構想到實作成品，這個過程總能帶給我巨大的成就感。對我來說，寫程式就像一場無盡的探險，我不只滿足於前端，也對後端、DevOps 等任何新奇的領域充滿好奇。",
-        "這份探索的熱情也延伸到了我的生活。下了班，我喜歡用雙腳去認識世界，無論是穿梭在山林步道、在城市中迎風慢跑，偶爾也享受從零開始，規劃一趟充滿細節的旅遊行程。",
-        "歡迎隨時找我聊聊技術、分享你的私房登山路線，或來一場燒腦的棋局！"
-    ],
-    "skills": {
-        "main": [
-            "JavaScript",
-            "Vue",
-            "Nuxt",
-            "Tailwind CSS",
-            "Git"
-        ],
-        "secondary": [
-            "React",
-            "Next.js",
-            "Node.js",
-            "Express",
-            "MongoDB"
-        ],
-        "legacy": [
-            "jQuery",
-            "Bootstrap"
-        ]
+  "name": "許益誠",
+  "eng_name": "Evan Hsu",
+  "position": "前端工程師",
+  "about_me": [
+    "我是一名熱愛打造流暢使用者介面的前端工程師。",
+    "過去三年多的業界經驗，讓我透過維護大型專案和專注於原生 JavaScript 開發，打下了扎實的語言核心基礎。這段經歷讓我深刻體會到良好程式架構的價值，也成為我擁抱現代框架的穩固基石。",
+    "然而，真正點燃我熱情的，是在工作之餘，一頭栽進現代前端框架的世界。我特別享受用 Vue 和 Nuxt 來打造專案，從構想到實作成品，這個過程總能帶給我巨大的成就感。對我來說，寫程式就像一場無盡的探險，我不只滿足於前端，也對後端、DevOps 等任何新奇的領域充滿好奇。",
+    "這份探索的熱情也延伸到了我的生活。下了班，我喜歡用雙腳去認識世界，無論是穿梭在山林步道、在城市中迎風慢跑，偶爾也享受從零開始，規劃一趟充滿細節的旅遊行程。",
+    "歡迎隨時找我聊聊技術、分享你的私房登山路線，或來一場燒腦的棋局！"
+  ],
+  "skills": {
+    "main": ["JavaScript", "Vue", "Nuxt", "Tailwind CSS", "Git"],
+    "secondary": ["React", "Next.js", "Node.js", "Express", "MongoDB"],
+    "legacy": ["jQuery", "Bootstrap"]
+  },
+  "interests": ["閱讀", "旅行", "下棋"],
+  "life_picture": [
+    { "src": "/images/hero/vn_ak47.jpg", "alt": "Vietnam paly ak47" },
+    { "src": "/images/hero/climb.jpg", "alt": "Climb Huoyanshan" },
+    { "src": "/images/hero/standingbymoon.jpg", "alt": "Standing by the moon" }
+  ],
+  "timelineItem": [
+    {
+      "date": "2023/03 - 至今",
+      "company": "圓展科技公司",
+      "title": "前端工程師",
+      "location": "新北市",
+      "description": [
+        "負責公司前端系統的維護與開發，運用 jQuery 與原生 JavaScript (ES6+) 進行功能優化。",
+        "獨立開發 Nuxt 3 專案，實作多語系支援、內容管理（含文字編輯、圖片新增與刪除）、資料庫串接，為內部同仁提供高效的操作工具。",
+        "參與後台儀表板的共同開發，優化使用者體驗與介面操作流程。",
+        "主動提出並推動前端技術升級，展現系統優化能力與前瞻性技術思維。",
+        "熟練掌握 Vue.js，除能持續維護既有 jQuery 專案外，亦具備 Vue.js / Nuxt 3 實務開發經驗，可於新專案中應用以提升系統效能與程式維護性。"
+      ]
     },
-    "interests": [
-        "閱讀",
-        "旅行",
-        "下棋"
-    ],
-    "life_picture": [
-        {
-            "src": "/images/hero/vn_ak47.jpg",
-            "alt": "vietnam paly ak47"
-        },
-        {
-            "src": "/images/hero/climb.jpg",
-            "alt": "climb Huoyanshan"
-        },
-        {
-            "src": "/images/hero/standingbymoon.jpg",
-            "alt": "standing by the moon"
-        }
-    ],
-    "timelineItem": [
-        {
-            "date": "2023/03 - 至今",
-            "company": "圓展科技公司",
-            "title": "前端工程師",
-            "location": "新北市",
-            "description": [
-                "負責公司前端系統的維護與開發，運用 jQuery 與原生 JavaScript (ES6+) 進行功能優化。",
-                "獨立開發 Nuxt 3 專案，實作多語系支援、內容管理（含文字編輯、圖片新增與刪除）、資料庫串接，為內部同仁提供高效的操作工具。",
-                "參與後台儀表板的共同開發，優化使用者體驗與介面操作流程。",
-                "主動提出並推動前端技術升級，展現系統優化能力與前瞻性技術思維。",
-                "熟練掌握 Vue.js，除能持續維護既有 jQuery 專案外，亦具備 Vue.js / Nuxt 3 實務開發經驗，可於新專案中應用以提升系統效能與程式維護性。"
-            ]
-        },
-        {
-            "date": "2022/10 - 2023/01",
-            "company": "日陞空間",
-            "title": "前端工程師",
-            "location": "台北市",
-            "description": [
-                "參與 Vue 2 專案 開發，使用 Element UI，負責既有功能維護與依專案需求開發新元件。",
-                "開發動態表單、使用者互動與資料渲染，著重於效能優化與使用者體驗提升。",
-                "與後端工程師緊密合作，串接並測試 API，確保前後端行為與資料一致性。",
-                "接手並擴充既有程式碼庫，透過程式碼檢視與溝通釐清架構與邏輯，確保專案能順利延續與擴充。"
-            ]
-        },
-        {
-            "date": "2021/08 - 2022/09",
-            "company": "日日升數位設計",
-            "title": "前端工程師",
-            "location": "台南市",
-            "description": [
-                "使用 WordPress 與 Elementor 開發響應式網站，將 Adobe XD 設計稿轉換為具備互動功能的前端版面，運用 HTML5、CSS3 與 JavaScript 完成實作。",
-                "與專案經理合作，釐清專案需求、討論技術可行性，並協助設計與開發團隊之間的溝通。",
-                "偶爾直接與客戶互動，蒐集回饋或釐清需求，累積客戶溝通與專案對接經驗。",
-                "雖由資深工程師負責後端開發，但參與多個基於 WordPress 的專案，負責前端實作與 CMS 設定，確保網站能順利上線與運行。"
-            ]
-        },
-        {
-            "date": "2020/10 - 2021/05",
-            "company": "百分比廣告有限公司",
-            "title": "前端工程師",
-            "location": "新北市",
-            "description": [
-                "使用 jQuery 與 Bootstrap 4 將 Adobe XD 設計稿轉換為響應式網頁。",
-                "透過 Microsoft Teams 與設計師直接溝通，釐清 UI/UX 需求並確保像素級精準實作。",
-                "與全端工程師合作，將前端頁面整合至基礎的 Laravel 環境。",
-                "使用 Git 與 GitHub 進行版本控制與協作，遵循結構化的開發流程。",
-                "在快速節奏、專案導向的環境中累積跨團隊合作的實務經驗。"
-            ]
-        },
-        {
-            "date": "",
-            "company": "",
-            "title": "",
-            "location": "",
-            "description": []
-        }
-    ],
-    "contact": {
-        "title": "聯繫我",
-        "description": "如果你對我的經歷或技能有興趣，非常歡迎與我聯繫，一起討論合作的可能！",
-        "form_name": "姓名",
-        "form_unit": "單位",
-        "form_email": "E-mail",
-        "form_message": "你要說啥",
-        "submit": "送出"
+    {
+      "date": "2022/10 - 2023/01",
+      "company": "日陞空間",
+      "title": "前端工程師",
+      "location": "台北市",
+      "description": [
+        "參與 Vue 2 專案 開發，使用 Element UI，負責既有功能維護與依專案需求開發新元件。",
+        "開發動態表單、使用者互動與資料渲染，著重於效能優化與使用者體驗提升。",
+        "與後端工程師緊密合作，串接並測試 API，確保前後端行為與資料一致性。",
+        "接手並擴充既有程式碼庫，透過程式碼檢視與溝通釐清架構與邏輯，確保專案能順利延續與擴充。"
+      ]
+    },
+    {
+      "date": "2021/08 - 2022/09",
+      "company": "日日升數位設計",
+      "title": "前端工程師",
+      "location": "台南市",
+      "description": [
+        "使用 WordPress 與 Elementor 開發響應式網站，將 Adobe XD 設計稿轉換為具備互動功能的前端版面，運用 HTML5、CSS3 與 JavaScript 完成實作。",
+        "與專案經理合作，釐清專案需求、討論技術可行性，並協助設計與開發團隊之間的溝通。",
+        "偶爾直接與客戶互動，蒐集回饋或釐清需求，累積客戶溝通與專案對接經驗。",
+        "雖由資深工程師負責後端開發，但參與多個基於 WordPress 的專案，負責前端實作與 CMS 設定，確保網站能順利上線與運行。"
+      ]
+    },
+    {
+      "date": "2020/10 - 2021/05",
+      "company": "百分比廣告有限公司",
+      "title": "前端工程師",
+      "location": "新北市",
+      "description": [
+        "使用 jQuery 與 Bootstrap 4 將 Adobe XD 設計稿轉換為響應式網頁。",
+        "透過 Microsoft Teams 與設計師直接溝通，釐清 UI/UX 需求並確保像素級精準實作。",
+        "與全端工程師合作，將前端頁面整合至基礎的 Laravel 環境。",
+        "使用 Git 與 GitHub 進行版本控制與協作，遵循結構化的開發流程。",
+        "在快速節奏、專案導向的環境中累積跨團隊合作的實務經驗。"
+      ]
+    },
+    {
+      "date": "",
+      "company": "",
+      "title": "",
+      "location": "",
+      "description": []
     }
+  ],
+  "contact": {
+    "title": "聯繫我",
+    "description": "如果你對我的經歷或技能有興趣，非常歡迎與我聯繫，一起討論合作的可能！",
+    "form_name": "姓名",
+    "form_unit": "單位",
+    "form_email": "E-mail",
+    "form_message": "你要說啥",
+    "submit": "送出"
+  }
 }

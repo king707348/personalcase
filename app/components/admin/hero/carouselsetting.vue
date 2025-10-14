@@ -69,8 +69,15 @@ const handleRemove = async (uploadFile, uploadFiles) => {
       body: {
         filePath: uploadFile.name
       }
-    });
-    console.log(res)
+    })
+    const db = await $fetch("/api/translate-i18n", {
+      method: "DELETE",
+      body: {
+        lang: "",
+        key: "life_picture",
+        setData: uploadFile.name
+      }
+    })
 
     ElMessage.success('The file has been removed from the server.!')
     return true
@@ -99,7 +106,7 @@ const handleUploadRequest = async (options) => {
       method: "POST",
       body: formData,
     })
-    console.log(options)
+
     const db = await $fetch("/api/translate-i18n", {
       method: "POST",
       headers: {
@@ -114,22 +121,15 @@ const handleUploadRequest = async (options) => {
         }
       }
     })
-    console.log(db)
-    
-    // console.log(res)
     if(res.success) {
       ElMessage.success(res.message)
     }else{
       ElMessage.error(res.message)
-      console.log(fileList.value)
     }
   }catch (e) {
     console.log(e)
   }
-
-
 }
-
 </script>
 
 <style type="scss">
