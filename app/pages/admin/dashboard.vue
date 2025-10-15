@@ -1,8 +1,7 @@
 <template>
   <div class="p-4">
-    <div class="flex justify-between border-b-2 pb-1">
+    <div class="border-b-2 pb-1">
       <h2 class="font-bold">DASHBOARD</h2>
-      <AvailableLocales class="mx-0" />
     </div>
     <AdminHeroCarouselsetting />
     <AdminHeroIntroduce />

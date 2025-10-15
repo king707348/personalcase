@@ -2,8 +2,16 @@
   <div>
     <el-card>
       <template #header>
-        <div class="card-header">
-          <span>編輯語系</span>
+        <div class="card-header flex justify-between">
+          <span>Edit</span>
+          <div class="flex">
+            <AvailableLocales class="my-auto mr-2" />
+            <el-form-item class="h-auto">
+              <el-button type="primary" @click="handleSave">
+                儲存變更
+              </el-button>
+            </el-form-item>
+          </div>
         </div>
       </template>
 
@@ -12,42 +20,38 @@
         :model="editableLocaleData"
         label-position="top"
       >
-            <el-form-item label="Name">
-                <el-input v-model=editableLocaleData.name />
-            </el-form-item>
-            <!-- <el-form-item label="Position">
-                <el-input v-model="editableLocaleData.position" />
-            </el-form-item>
-            <el-form-item label="副標題" v-if="locale == 'en'">
-                <el-input v-model="editableLocaleData.subtitle" />
-            </el-form-item> -->
-
-            <!-- <div v-if="editableLocaleData.profile">
-              <el-form-item label="關於我)">
-                <el-input
-                  v-model="editableLocaleData.profile.about_me[0]"
-                  type="textarea"
-                  :rows="4"
-                />
-              </el-form-item>
-              <div v-if="editableLocaleData.interests">
-                <el-form-item label="興趣標題">
-                  <el-input v-model="editableLocaleData.interests.title" />
-                </el-form-item>
-                <el-form-item label="興趣內容">
-                  <el-input
-                    v-model="editableLocaleData.interests.content"
-                    type="textarea"
-                  />
-                </el-form-item>
-              </div>
-            </div> -->
-
-        <el-divider />
-
-        <el-form-item>
-          <el-button type="primary" @click="handleSave"> 儲存變更 </el-button>
+        <el-form-item label="Name">
+          <el-input v-model="editableLocaleData.name" />
         </el-form-item>
+        <el-form-item label="Position">
+          <el-input v-model="editableLocaleData.position" />
+        </el-form-item>
+        <el-form-item label="Subtitle" v-if="locale == 'en'">
+          <el-input v-model="editableLocaleData.subtitle" />
+        </el-form-item>
+        <el-form-item label="About Me">
+          <el-input
+            class="mb-2"
+            v-for="(db, i) in editableLocaleData.about_me"
+            :key="i"
+            v-model="editableLocaleData.about_me[i]"
+            type="textarea"
+            :rows="2"
+          />
+        </el-form-item>
+        <el-form-item label="Interests" v-if="editableLocaleData.interests">
+          <el-input
+            v-model="editableLocaleData.interests.content"
+            type="textarea"
+          />
+        </el-form-item>
+        <el-form-item label="ideal" v-if="editableLocaleData.ideal">
+          <el-input v-model="editableLocaleData.ideal" type="textarea" />
+        </el-form-item>
+        <el-form-item label="ideal" v-if="editableLocaleData.ideal">
+          <el-input v-model="editableLocaleData.ideal" type="textarea" />
+        </el-form-item>
+        <el-divider />
       </el-form>
 
       <div v-else>語系檔載入中...</div>
@@ -61,34 +65,24 @@
 </template>
 
 <script setup>
-const { messages, locale, tm } = useI18n()
-const editableLocaleData = ref(null)
+const { data } = useFetch("/api/i18nlang");
+console.log(data.value);
 
-const updateEditableData = (newLocale) => {
-  if (messages.value[newLocale]) {
-    editableLocaleData.value = JSON.parse(JSON.stringify(messages.value[newLocale]))
-    console.log(`已載入 ${newLocale} 的資料`);
+const editableLocaleData = ref(data.value);
+
+const handleSave = async () => {
+  console.log("準備要儲存的語系檔內容:", editableLocaleData.value);
+  try {
+    // await $fetch('/api/locales/en', {
+    //   method: 'POST',
+    //   body: editableLocaleData.value
+    // });
+    ElMessage.success("語系檔已成功儲存 (模擬)");
+  } catch (error) {
+    ElMessage.error("儲存失敗，請查看 console");
+    console.error("儲存語系檔失敗:", error);
   }
-}
-
-watch(locale, (newLocale) => {
-  updateEditableData(newLocale)
-  
-}, {immediate: true });
-
-// const handleSave = async () => {
-//   console.log("準備要儲存的語系檔內容:", editableLocaleData.value);
-//   try {
-//     // await $fetch('/api/locales/en', {
-//     //   method: 'POST',
-//     //   body: editableLocaleData.value
-//     // });
-//     ElMessage.success("語系檔已成功儲存 (模擬)");
-//   } catch (error) {
-//     ElMessage.error("儲存失敗，請查看 console");
-//     console.error("儲存語系檔失敗:", error);
-//   }
-// };
+};
 </script>
 
 <style scoped>
@@ -99,4 +93,5 @@ pre {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
 </style>
