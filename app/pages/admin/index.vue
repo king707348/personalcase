@@ -81,7 +81,7 @@ const submitForm = (formEl) => {
       const res = await $fetch("/api/login", {
         method: 'POST',
         headers: {
-            'Content-Type': "application/json; charset=UTF-8"
+          'Content-Type': "application/json; charset=UTF-8"
         },
         body: ruleForm
       })

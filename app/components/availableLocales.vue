@@ -1,12 +1,14 @@
 <template>
-    <NuxtLink
-      v-for="locale in availableLocales"
-      :key="locale.code"
-      :to="switchLocalePath(locale.code)"
-      class="px-2 py-1 m-auto rounded-md hover:bg-elevated active:bg-elevated focus:outline-none focus-visible:bg-elevated hover:disabled:bg-transparent dark:hover:disabled:bg-transparent hover:aria-disabled:bg-transparent dark:hover:aria-disabled:bg-transparent p-1.5"
-    >
-      {{ locale.name }}
-    </NuxtLink>
+    <div>
+      <NuxtLink
+        v-for="locale in availableLocales"
+        :key="locale.code"
+        :to="switchLocalePath(locale.code)"
+        class="px-2 py-1 m-auto rounded-md hover:bg-elevated active:bg-elevated focus:outline-none focus-visible:bg-elevated hover:disabled:bg-transparent dark:hover:disabled:bg-transparent hover:aria-disabled:bg-transparent dark:hover:aria-disabled:bg-transparent p-1.5"
+      >
+        {{ locale.name }}
+      </NuxtLink>
+    </div>
 </template>
 
 <script setup>

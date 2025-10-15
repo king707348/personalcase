@@ -57,18 +57,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  hooks: {
-    'i18n:extend-pages': function (pages) {
-      const pagesToRemove = pages.filter(page => page.path.startsWith('/admin'))
-
-      pagesToRemove.forEach(page => {
-        const index = pages.findIndex(p => p.path === page.path)
-        if (index > -1) {
-          pages.splice(index, 1)
-        }
-      })
-    }
-  },
   runtimeConfig: {
     // user username/password
     DEV_USERNAME: process.env.DEV_USERNAME,
