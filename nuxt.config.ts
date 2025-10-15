@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   ],
   i18n: {
     defaultLocale: 'zh',
-    strategy: 'prefix',
+    strategy: 'prefix_except_default',
     locales: [
       { code: "zh", name: "ZH", iso: "zh-TW", file: "zh.json" },
       { code: "en", name: "EN", iso: "en-US", file: "en.json" }
