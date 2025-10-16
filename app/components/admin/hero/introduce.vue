@@ -5,7 +5,7 @@
         <div class="card-header flex justify-between">
           <span>Edit</span>
           <div class="flex">
-            <AvailableLocales class="my-auto mr-2" />
+            
             <el-form-item class="h-auto">
               <el-button type="primary" @click="handleSave">
                 儲存變更
@@ -65,10 +65,15 @@
 </template>
 
 <script setup>
-const { data } = useFetch("/api/i18nlang");
-console.log(data.value);
+const { data, pending } = useAsyncData('locale', () => {
+    $fetch("/api/i18nlang")
+})
+console.log(data.value, pending);
 
-const editableLocaleData = ref(data.value);
+const editableLocaleData = ref()
+watch(data, (val) => {
+    if(val) editableLocaleData.value = val
+}, { immediate: true })
 
 const handleSave = async () => {
   console.log("準備要儲存的語系檔內容:", editableLocaleData.value);
