@@ -13,10 +13,17 @@ export default defineEventHandler(async (event) => {
       const db = JSON.parse(res)
 
       if(method == "POST"){
-        const newDb = {
-          src: `/images/${setData.src}/${setData.alt}`,
-          alt: setData.alt
+        let newDb = {}
+
+        if(key == "life_picture"){
+          newDb = {
+            src: `/images/${setData.src}/${setData.alt}`,
+            alt: setData.alt
+          }
         }
+
+        if(key == "")
+
 
         db[key] = [...db[key], newDb]
         await fs.writeFile(filePath, JSON.stringify(db))

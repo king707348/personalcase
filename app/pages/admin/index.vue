@@ -83,12 +83,13 @@ const submitForm = (formEl) => {
           "Content-Type": "application/json; charset=UTF-8",
         },
         body: ruleForm,
+        immediate: false
       });
 
       console.log(res);
       if (res.status == "ok") {
-            const cookie = useCookie('session')
-    console.log(useCookie(), cookie)
+        // If you need to use a cookie composable, ensure it's available in your environment,
+        // e.g. useCookie is provided by Nuxt; otherwise handle cookies manually here.
         await navigateTo("/admin/dashboard");
       }
     } else {

@@ -64,12 +64,14 @@ const handleRemove = async (uploadFile, uploadFiles) => {
   }
 
   try {
+    // 刪除後臺圖片
     const res = await $fetch('/api/delete-image', {
       method: 'DELETE',
       body: {
         filePath: uploadFile.name
       }
     })
+    // 刪除語言檔圖片
     const db = await $fetch("/api/translate-i18n", {
       method: "DELETE",
       body: {
@@ -102,11 +104,12 @@ const handleUploadRequest = async (options) => {
   formData.append('types', types)
 
   try {
+    // 上傳圖片
     const res = await $fetch("/api/upload-images", {
       method: "POST",
       body: formData,
     })
-
+    // 更新語系檔
     const db = await $fetch("/api/translate-i18n", {
       method: "POST",
       headers: {
@@ -121,6 +124,7 @@ const handleUploadRequest = async (options) => {
         }
       }
     })
+
     if(res.success) {
       ElMessage.success(res.message)
     }else{
