@@ -48,8 +48,8 @@
         <el-form-item label="ideal" v-if="editableLocaleData.ideal">
           <el-input v-model="editableLocaleData.ideal" type="textarea" />
         </el-form-item>
-        <el-form-item label="ideal" v-if="editableLocaleData.ideal">
-          <el-input v-model="editableLocaleData.ideal" type="textarea" />
+        <el-form-item label="Skills" v-if="editableLocaleData.skills">
+          
         </el-form-item>
         <el-divider />
       </el-form>
@@ -69,28 +69,18 @@ const { locale } = useI18n()
 
 const localeData = ref(null)
 const editableLocaleData = ref(null)
-
+// 第一次渲染
 const fetchLocaleData = async () => {
-  const { data, pending } = await useAsyncData('locale', () => {
-    return $fetch(`/api/i18nlang?lang=${locale.value}`)
-  })
+  const { data } = await useFetch(`/api/i18nlang?lang=${locale.value}`)
   localeData.value = data.value
 }
 
-//
+// 切換語系
 const remindEvent = async () => {
   const data = await $fetch(`/api/i18nlang?lang=${locale.value}`)
 
   localeData.value = data
-  console.log(localeData.value)
 }
-
-watch(localeData, (val) => {
-  if(val) editableLocaleData.value = val
-  console.log(editableLocaleData.value, val)
-}, { immediate: true, deep: true})
-
-console.log(locale, localeData);
 
 // 儲存語系檔
 const handleSave = async () => {
@@ -115,6 +105,11 @@ const handleSave = async () => {
 }
 
 await fetchLocaleData()
+
+watch(localeData, (val) => {
+  if(val) editableLocaleData.value = val
+  console.log(editableLocaleData.value, val)
+}, { immediate: true, deep: true})
 </script>
 
 <style scoped>
