@@ -48,8 +48,48 @@
         <el-form-item label="ideal" v-if="editableLocaleData.ideal">
           <el-input v-model="editableLocaleData.ideal" type="textarea" />
         </el-form-item>
-        <el-form-item label="Skills" v-if="editableLocaleData.skills">
-          
+        <el-form-item label="Skills" >
+          <el-card 
+            class="flex flex-col w-[100%]"
+            v-for="(skills, keys) in editableLocaleData.skills"
+            :key="skills"
+          >
+            <div class="flex flex-row">
+              <div class="title capitalize max-w-[6rem] w-100 mr-2 border-r-1 border-r-gray-300">{{ keys }}</div>
+              <draggable 
+                :list="skills"
+                group="skills"
+                tag="div"
+                @start="drag=true" 
+                @end="drag=false" 
+                item-key="element"
+              >
+                <template #item="{element, index}">
+                  <ElTag
+                    class="m-1 cursor-move"
+                    effect="light"
+                    closable
+                    @close="draggableHandleDelete(skills, index)"
+                  >
+                    {{element}}
+                  </ElTag>
+                </template>
+              </draggable>
+              <el-tag class="my-auto">
+                <el-input
+                v-model="newSkill[keys]"
+                @keyup.enter="draggableHandleAdd(keys, newSkill[keys])"
+                clearable
+                class="dgadd-btn"
+              >
+                <template #append >
+                  <el-button @click="draggableHandleAdd(keys, newSkill[keys])" class="add-btn">+</el-button>
+                </template>
+              </el-input>
+              </el-tag>
+              
+            </div>
+          </el-card>
         </el-form-item>
         <el-divider />
       </el-form>
@@ -65,7 +105,30 @@
 </template>
 
 <script setup>
+import draggable from 'vuedraggable'
+
+const drag = ref(false)
 const { locale } = useI18n()
+
+const myArray = ref([
+  {
+    id:0,
+    name:'apple'
+  },
+  {
+    id:1,
+    name:'banana'
+  },
+  {
+    id:2,
+    name:'cherry'
+  },
+])
+const newSkill = ref({
+  main: [],
+  secondary: [],
+  legacy: []
+})
 
 const localeData = ref(null)
 const editableLocaleData = ref(null)
@@ -88,7 +151,7 @@ const handleSave = async () => {
   try {
     await $fetch('/api/translate-i18n', {
       method: 'POST',
-        headers: {
+      headers: {
         "Content-Type": "application/json; charset=UTF-8"
       },
       body: {
@@ -104,12 +167,26 @@ const handleSave = async () => {
   }
 }
 
+const draggableHandleAdd = (keys, db) => {
+  if(db.trim() == "") return
+  console.log(db);
+  editableLocaleData.value.skills[keys].push(db)
+  newSkill.value[keys] = []
+}
+
+const draggableHandleDelete = (db, idx) => {
+  db.splice(idx, 1)
+  console.log(editableLocaleData.value)
+}
+
 await fetchLocaleData()
 
 watch(localeData, (val) => {
   if(val) editableLocaleData.value = val
-  console.log(editableLocaleData.value, val)
 }, { immediate: true, deep: true})
+
+console.log(editableLocaleData.value);
+
 </script>
 
 <style scoped>
@@ -119,6 +196,28 @@ pre {
   border-radius: 4px;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+.dgadd-btn :deep(.el-input__inner){
+    margin: 0 auto;
+    max-width: 50px;
+    height: 100%;
+  }
+
+:deep(.el-input-group__append){
+  padding: 0 .5rem;
+  .add-btn{
+    width: 1rem;
+    height: fit-content;
+    padding: 0;
+    margin-inline: 0;
+    margin-block: auto;
+  }
+}
+
+:deep(.el-tag){
+  .el-input-group__append{
+    padding: 0;
+  }
 }
 
 </style>

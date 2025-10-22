@@ -22,15 +22,17 @@
                         <p class="font-bold mb-4">{{ $t("ideal") }}</p>
                     </template>
                     <span class="technical-barrier">
-                        <UKbd v-for="item in skillsCategories" 
+                        <UTooltip 
+                            v-for="item in skillsCategories" 
                             :key="item.name"
-                            :class="['skills border mr-2', item.color]"
+                            :text="sk(Object.keys(langTooltipContent).filter(i => i == item.category))" 
                         >
-                            {{ $rt(item.name) }}
-                        </UKbd>
-                    </span>
-                    <span>
-                        <MyLink />
+                            <UKbd 
+                                :class="['skills border mr-2', item.color]"
+                            >
+                                {{ $rt(item.name) }}
+                            </UKbd>
+                        </UTooltip>
                     </span>
                 </div>
             </section>
@@ -44,6 +46,7 @@
         
         <LoginHead />
         <SwitchMode class="absolute top-0 right-0 flex p-2 gap-2" />
+        <MyLink />
         <BackToTop />
         <slot />
     </main>
@@ -61,6 +64,27 @@
     ...secondarySkills.map(i => ({ name: rt(i), category: 'secondary', color: 'border-green-600' })),
     ...legacySkills.map(i => ({ name: rt(i), category: 'legacy', color: 'border-red-600' }))
   ]
+
+  const langTooltipContent = reactive({
+    main: {
+        zh: "我主要在開發中使用這些技術，也會持續精進能力",
+        en: "Using these in my development work and always looking for ways to get better."
+    },
+    secondary: {
+        zh: "有研究過，也在積極學習中，目前實際動手操作的經驗還比較有限",
+        en: "Looked into it and actively learning, though hands-on usage so far has been limited."
+    },
+    legacy: {
+        zh: "主要維護為主，開發次之",
+        en: "This localization format prioritizes maintainability over development convenience."
+    }
+  })
+
+  const sk = (key) => {
+    const lang = locale.value
+
+    return langTooltipContent[key][lang]
+  }
 </script>
 
 <style scoped>
