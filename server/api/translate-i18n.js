@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
     const filePath = path.join(process.cwd(), `i18n`,`locales`,`${lang}.json`)
     try {
       const res = await fs.readFile(filePath, 'utf-8')
-      const db = JSON.parse(res)
+      let db = JSON.parse(res)
 
       if(method == "POST"){
         let newDb = {}
@@ -20,12 +20,14 @@ export default defineEventHandler(async (event) => {
             src: `/images/${setData.src}/${setData.alt}`,
             alt: setData.alt
           }
+          db[key] = [...db[key], newDb]
         }
 
-        if(key == "")
+        if(key == ""){
+          newDb = setData
+          db = newDb
+        }
 
-
-        db[key] = [...db[key], newDb]
         await fs.writeFile(filePath, JSON.stringify(db))
       }
       if(method == "DELETE"){

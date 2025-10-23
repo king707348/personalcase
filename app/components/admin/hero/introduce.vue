@@ -6,7 +6,7 @@
           <span class="my-auto">Edit</span>
           <div class="flex">
             <AvailableLocales @click="remindEvent" />
-            <el-form-item class="h-auto mb-0">
+            <el-form-item class="h-auto">
               <el-button type="primary" @click="handleSave">
                 儲存變更
               </el-button>
@@ -109,7 +109,7 @@ import draggable from 'vuedraggable'
 
 const drag = ref(false)
 const { locale } = useI18n()
-
+// test array
 const myArray = ref([
   {
     id:0,
@@ -196,6 +196,9 @@ pre {
   border-radius: 4px;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+:deep(.el-form-item){
+  margin-bottom: 0;
 }
 .dgadd-btn :deep(.el-input__inner){
     margin: 0 auto;
