@@ -46,7 +46,7 @@
         
         <LoginHead />
         <SwitchMode class="absolute top-0 right-0 flex p-2 gap-2" />
-        <MyLink />
+        <MyShareLink />
         <BackToTop />
         <slot />
     </main>
