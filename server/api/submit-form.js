@@ -1,7 +1,7 @@
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const config = useRuntimeConfig(event)
-  const { token } = body
+  const { token, submitFormData } = body
   const secretKey = config.apiSecret
   // 前端取token
   if (!token) {
@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
       statusMessage: 'reCAPTCHA secret key is not configured'
     })
   }
-
+  // 驗證網址
   const verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
   const formData = new URLSearchParams();
   formData.append('secret', secretKey);
@@ -29,16 +29,18 @@ export default defineEventHandler(async (event) => {
       body: formData
     });
 
-    const verificationResult = await response.json();
+    const verificationResult = await response.json()
 
     if (!verificationResult.success) {
-      console.error('reCAPTCHA verification failed:', verificationResult['error-codes']);
       throw createError({
         statusCode: 400,
         statusMessage: 'reCAPTCHA verification failed.',
       });
     }
     console.log('reCAPTCHA verification successful:', verificationResult);
+
+    console.log(submitFormData)
+
     return {
       success: true,
       score: verificationResult.score, // v3 會回傳分數

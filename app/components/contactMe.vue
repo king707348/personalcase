@@ -63,25 +63,30 @@ async function onSubmit(event) {
   const token = await verify('submit')
   if (!token) return alert('驗證失敗')
 
-  const res = await $fetch('/api/action', {
+  const res = await $fetch('/api/submit-form', {
     method: 'POST',
     body: {
       token: token,
-      recaptchaAction: "action"
+      submitFormData: event.data
     }
   })
+  console.log(res)
   
-  if(res.success){
-    // console.log(event.data);
-    // post state 到後端 存資料或發送資料 在清空
-    if(event.data) resetState()
-
+  if(res.score > 0.6){
     toast.add({
       title: "Success",
       description: "The form has been submitted.",
       color: "success"
     })
+  }else{
+    toast.add({
+      title: "Error",
+      description: "reCAPTCHA verification failed. Please try again.",
+      color: "error"
+    })
   }
+  // post state 到後端 存資料或發送資料 在清空
+  if(event.data) resetState()
 }
 
 async function onError(event) {

@@ -144,6 +144,7 @@ const editableLocaleData = ref(null);
 // 第一次渲染
 const fetchLocaleData = async () => {
   const { data } = await useFetch(`/api/i18nlang?lang=${locale.value}`);
+  
   localeData.value = data.value;
 };
 
@@ -169,7 +170,7 @@ const handleSave = async () => {
         setData: editableLocaleData.value,
       },
     });
-    ElMessage.success("語系檔已成功儲存 (模擬)");
+    ElMessage.success("語系檔已成功儲存");
   } catch (error) {
     ElMessage.error("儲存失敗，請查看 console");
     console.error("儲存語系檔失敗:", error);
@@ -179,7 +180,7 @@ const handleSave = async () => {
 
 const draggableHandleAdd = (keys, db) => {
   if (db.trim() == "") return;
-  console.log(db);
+
   editableLocaleData.value.skills[keys].push(db);
   newSkill.value[keys] = [];
 };
