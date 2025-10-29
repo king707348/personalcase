@@ -5,7 +5,6 @@
     </div>
     <AdminHeroCarouselsetting />
     <AdminHeroIntroduce />
-
   </div>
 </template>
 
