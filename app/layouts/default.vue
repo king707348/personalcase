@@ -6,13 +6,13 @@
             </section>
             <section class="relative flex flex-1 align-center justify-center hero">
                 <div class="w-[80%] h-[80vh] m-auto px-4">
-                    <b class="relative flex flex-row items-baseline mb-4 gap-2">
+                    <div class="relative flex flex-row items-baseline mb-4 gap-2">
                         <span class="absolute -left-12 text-sm font-normal font-mono rotate-[-30deg]">
                             Hey, I am
                         </span>
                         <h1 class="relative text-[2.5rem] font-bold">{{ $t("name") }}</h1>
                         <small v-if="locale == 'zh'">{{ $t("eng_name") }}</small>
-                    </b>
+                    </div>
                     <h2 v-if="locale == 'en'" class="mb-4">{{ $t("subtitle") }}</h2>
                     <p v-for="(text, idx) in tm('about_me')" :key="idx" class="mb-4">
                         {{ $rt(text) }}
@@ -25,7 +25,7 @@
                         <UTooltip 
                             v-for="item in skillsCategories" 
                             :key="item.name"
-                            :text="sk(Object.keys(langTooltipContent).filter(i => i == item.category))" 
+                            :text="$sk(Object.keys(langTooltipContent).filter(i => i == item.category))" 
                         >
                             <UKbd 
                                 :class="['skills border mr-2', item.color]"
@@ -53,7 +53,7 @@
 </template>
 
 <script setup>
-  const { locale, tm, rt } = useI18n()
+  const { locale, setLocaleMessage, tm, rt } = useI18n()
 
   const mailSkills = tm('skills.main')
   const secondarySkills = tm("skills.secondary")
@@ -80,11 +80,26 @@
     }
   })
 
-  const sk = (key) => {
+  const $sk = (key) => {
     const lang = locale.value
 
     return langTooltipContent[key][lang]
   }
+
+  const loadApiMessage = async (lang) => {
+    try {
+      const res = await $fetch(`/api/i18nlang?lang=${lang}`)
+      setLocaleMessage(lang, res)
+        console.log("res", res)
+      console.log('成功從 API 載入並覆蓋 i18n 資料！')
+    } catch (error) { console.error("載入語系檔失敗:", error) }
+  }
+
+  watch(locale, (newLocale) => {
+    console.log("Locale changed to:", newLocale)
+    loadApiMessage(newLocale)
+  }, { immediate: true })
+
 </script>
 
 <style scoped>

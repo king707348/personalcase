@@ -2,13 +2,10 @@ export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const method = event.method
   const { lang, key, setData } = body
+  const storage = useStorage('data')
 
   const langPath = async (lang) => {
-    const storage = useStorage('asserts:server:i18n')
-    const storageKey = 'i18n:en';
-    let db = (await storage.getItem(lang)) || {}
-    console.log('db', lang, db)
-
+    const currentData = (await storage.getItem(`i18n-${lang}`)) || {}
     switch(method){
       case "POST":
         if(key == "life_picture"){
@@ -16,16 +13,16 @@ export default defineEventHandler(async (event) => {
             src: `/images/${setData.src}/${setData.alt}`,
             alt: setData.alt
           }
-          db[key].push(newDb)
+          currentData[key].push(newDb)
         }else if(key == ""){
-          db = setData
+          await storage.setItem(`i18n-${lang}`, setData)
         }
 
-        await storage.setItem(lang, db)
+        console.log("psot currentData", lang, currentData)
         return {
           status: 200,
           message: 'Success',
-          data: db,
+          data: storage,
           lang: lang
         }
 
