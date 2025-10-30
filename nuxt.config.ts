@@ -69,5 +69,4 @@ export default defineNuxtConfig({
       NUXT_PUBLIC_RECAPTCHA_SITE_KEY: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY
     }
   }
-
 })

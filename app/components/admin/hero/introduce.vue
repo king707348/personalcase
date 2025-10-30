@@ -136,15 +136,15 @@ const { locale } = useI18n();
 const newSkill = ref({
   main: [],
   secondary: [],
-  legacy: [],
-});
+  legacy: []
+})
 
 const localeData = ref(null);
 const editableLocaleData = ref(null);
 // 第一次渲染
 const fetchLocaleData = async () => {
-  const { data } = await useFetch(`/api/i18nlang?lang=${locale.value}`);
-  
+  const { data } = await useFetch(`/api/i18nlang?lang=${locale.value}`)
+
   localeData.value = data.value;
 };
 
@@ -152,7 +152,7 @@ const fetchLocaleData = async () => {
 const remindEvent = async () => {
   const data = await $fetch(`/api/i18nlang?lang=${locale.value}`);
 
-  localeData.value = data;
+  localeData.value = data
 };
 
 // 儲存語系檔
@@ -162,21 +162,22 @@ const handleSave = async () => {
     await $fetch("/api/translate-i18n", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Type": "application/json; charset=UTF-8"
       },
       body: {
         lang: locale.value,
         key: "",
-        setData: editableLocaleData.value,
-      },
-    });
+        setData: editableLocaleData.value
+      }
+    })
+
     ElMessage.success("語系檔已成功儲存");
   } catch (error) {
     ElMessage.error("儲存失敗，請查看 console");
     console.error("儲存語系檔失敗:", error);
   }
   dialogVisible.value = false
-};
+}
 
 const draggableHandleAdd = (keys, db) => {
   if (db.trim() == "") return;
